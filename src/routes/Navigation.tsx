@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, NavLink, Redirect, Switch } from 'react-router-dom';
+import { Router, Route, NavLink, Redirect, Switch } from 'react-router-dom';
 import logo from '../logo.svg';
 // import { LazyPage1, LazyPage2, LazyPage3 } from '../lazyload/pages';
 import { routes } from './routes';
@@ -8,8 +8,8 @@ import { Suspense } from 'react';
 const Navigation = () => {
 
   return (
-    <Suspense fallback={<span>Loading...</span>}>
-        <BrowserRouter>
+    <Suspense fallback={ <span>Loading</span> }>
+        <Router>
             <div className="main-layout">
                 <nav>
                     <img src={logo} alt="React logo" />
@@ -28,7 +28,7 @@ const Navigation = () => {
                     <Redirect to={routes[0].path} />
                 </Switch>
             </div>
-        </BrowserRouter>
+        </Router>
     </Suspense>
   )
 }
